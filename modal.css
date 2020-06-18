@@ -44,6 +44,7 @@
 
         /* width: 90%!important; */
         /* margin: 0 auto; */
+        /* padding: 20px 30px 10px; */
       }
 
       .btn-pry{
@@ -143,10 +144,10 @@ border:1px solid #337AB7 !important;
   box-sizing: border-box;
   border-radius: 5px;
   height: auto;
-  /* transition: all 0.5s ease-in-out; */
   /* max-height: 178px; */
   /* overflow-y: auto; */
 }
+
 
 .skill_option{
   font-family: Poppins;
