@@ -144,7 +144,7 @@ border:1px solid #337AB7 !important;
   border-radius: 5px;
   height: auto;
   max-height: 178px;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 .skill_option{

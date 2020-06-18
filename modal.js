@@ -7,11 +7,8 @@ let image = "";
 
 let skills = [
   'User Experience Research',
-  'Information Security',
-  'Research Program',
-  'Microsoft Office Certifications',
-  'Video Creation',
-  'Database Management'
+  'User Experience Research',
+  'User Experience Research',
 ];
 
 
