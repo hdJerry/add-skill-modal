@@ -1,7 +1,7 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Salsa&display=swap');
 
-    @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    /* @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); */
 
       .hidden-content,.no-show,.hide-options{display: none;height: 0;width: 0; transition: all 0.5s ease-in-out;}
 
@@ -14,7 +14,7 @@
 
       .modal-dialog{
         z-index: 1;
-        width: 540px;
+        /* width: 540px; */
       }
 
       .modal-content{
