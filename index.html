@@ -45,7 +45,7 @@
               <path d="M20.4998 19.4425L14.8373 13.75C16.191 12.1166 16.8635 10.0246 16.7151 7.90838C16.5667 5.79217 15.6089 3.81446 14.0405 2.38603C12.4721 0.95759 10.4137 0.188221 8.29285 0.237722C6.17203 0.287223 4.15178 1.15179 2.65172 2.65185C1.15167 4.1519 0.287101 6.17215 0.2376 8.29297C0.188099 10.4138 0.957468 12.4722 2.3859 14.0406C3.81434 15.609 5.79205 16.5669 7.90825 16.7153C10.0245 16.8637 12.1165 16.1912 13.7498 14.8375L19.4423 20.5L20.4998 19.4425ZM1.74984 8.49996C1.74984 7.16494 2.14572 5.85989 2.88742 4.74986C3.62912 3.63983 4.68332 2.77467 5.91673 2.26377C7.15013 1.75288 8.50733 1.61921 9.8167 1.87966C11.1261 2.14011 12.3288 2.78299 13.2728 3.72699C14.2168 4.67099 14.8597 5.87373 15.1201 7.1831C15.3806 8.49247 15.2469 9.84967 14.736 11.0831C14.2251 12.3165 13.36 13.3707 12.2499 14.1124C11.1399 14.8541 9.83486 15.25 8.49984 15.25C6.70963 15.25 4.99274 14.5388 3.72687 13.2729C2.461 12.0071 1.74984 10.2902 1.74984 8.49996Z" fill="#4C5059"/>
               </svg>
             </i>
-            <i class="angle-down-icon add_skill_show" aria-hidden="true" data-showoption="add_skill">
+            <i class="angle-down-icon add_skill_show" aria-hidden="true" role="button" data-showoption="add_skill" data-toggle="collapse" data-target="#collapseOption" aria-expanded="false" aria-controls="collapseOption">
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1L5 5L9 1" stroke="#337AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -53,7 +53,7 @@
           <input type="text" name="skill" value="" data-selected = "add_skill" class="form-control skill" placeholder="User" id="" autocomplete="off">
           </div>
 
-          <div class="skill_options row form-group hide-options">
+          <div class="skill_options row form-group collapse" id="collapseOption">
           </div>
             <button data-formname="add_skill" data-method="POST" data-url="/mylink" class="btn btn-pry submit_now mx-auto" id="add_skill_btn">Add skill</button>
             <button class="btn btn-pry mx-auto loading hide_button" id="add_skill_loader">
@@ -72,7 +72,7 @@
     <script src="./bootstrap-js/bootstrap.js" charset="utf-8"></script>
     <script src="./bootstrap-js/popper.js" charset="utf-8"></script>
     <script src="./modal.js" charset="utf-8"></script>
-    <script src="./testapi.js" charset="utf-8"></script>
+    <!-- <script src="./testapi.js" charset="utf-8"></script> -->
 
   </body>
 </html>

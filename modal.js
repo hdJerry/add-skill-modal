@@ -8,7 +8,7 @@ let image = "";
 let skills = [
   'User Experience Research',
   'User Experience Research',
-  'User Experience Research',
+  'User Experience Research'
 ];
 
 
@@ -112,28 +112,31 @@ $('body')
 
 //WHen the user click the option provided it is saved in the input field
 .on('click', '.skill_option',(elm)=>{
-  let {target} = elm;
-  $('body .skill').val(target.innerText)
+  let {currentTarget} = elm;
+  $('body .skill').val(currentTarget.innerText)
 
-  let selected = target.dataset.select;
+  let {select, toggle} = currentTarget.dataset;
+
+  // console.log(currentTarget.dataset);
+  // console.log(select);
 
 
   let skill_listX = skills.find(val => {
     // console.log(val);
     // console.log(elm.target.value);
-    return val.toLowerCase() === target.innerText.toLowerCase()
+    return val.toLowerCase() === currentTarget.innerText.toLowerCase()
   })
   // console.log(skill_listX);
   if(skill_listX == undefined){
-    $('body #'+selected+'_btn').attr('disabled',true);
+    $('body #'+select+'_btn').attr('disabled',true);
 
   }else{
 
-    $('body #'+selected+'_btn').attr('disabled',false);
+    $('body #'+select+'_btn').attr('disabled',false);
   }
   setTimeout(()=>{
 
-    $('body .skill_options').addClass('hide-options');
+    // $('body .skill_options').addClass('hide-options');
   },200)
 
 
@@ -163,7 +166,7 @@ setTimeout(()=>{
   }
 
 
-  $('body .skill_options').addClass('hide-options');
+  // $('body .skill_options').addClass('hide-options');
 
 },200)
 
@@ -171,25 +174,28 @@ setTimeout(()=>{
 })
 
 .on('click','.add_skill_show',(elm)=>{
+  // elm.preventDefault();
+  // elm.stopImmediatePropagation();
+  // console.log(elm);
 
-  let {target} = elm;
-  let select = target.dataset.showoption;
+  let {currentTarget} = elm;
+  let select = currentTarget.dataset.showoption;
 
-console.log();
-
-if($('body .skill_options').hasClass('hide-options')){
-  $('body .skill_options').removeClass('hide-options');
-
-}else{
-  $('body .skill_options').addClass('hide-options');
-
-}
+// console.log(select);
+//
+// if($('body .skill_options').hasClass('hide-options')){
+//   $('body .skill_options').removeClass('hide-options');
+//
+// }else{
+//   $('body .skill_options').addClass('hide-options');
+//
+// }
   // console.log(skill_list);
   $('body .skill_options').html('');
 
   skills.forEach(skill=>{
     // console.log(skill);
-    $('body .skill_options').append(`<div class="col-12 skill_option" data-select="${select}">${skill}</div>`);
+    $('body .skill_options').append(`<div class="col-12 skill_option" role="button" data-select="${select}" data-toggle="collapse" data-target="#collapseOption" aria-expanded="false" aria-controls="collapseOption">${skill}</div>`);
   })
 
 })
@@ -210,10 +216,12 @@ if($('body .skill_options').hasClass('hide-options')){
 
 
   if(value.trim() === "" || value.trim().length < 2 || skill_list.length == 0){
-    $('body .skill_options').addClass('hide-options');
+    // $('body .skill_options').removeClass('show');
+    $('body .skill_options').collapse('hide');
       target.style.border = '1px solid red';
   }else {
-    $('body .skill_options').removeClass('hide-options');
+    $('body .skill_options').collapse('show');
+    // $('body .skill_options').addClass('show');
   }
 
     $('body #'+select+'_btn').attr('disabled',true);
@@ -223,7 +231,7 @@ if($('body .skill_options').hasClass('hide-options')){
 
     skill_list.forEach(skill=>{
       // console.log(skill);
-      $('body .skill_options').append(`<div class="col-12 skill_option" data-select="${select}">${skill}</div>`);
+      $('body .skill_options').append(`<div class="col-12 skill_option" role="button" data-select="${select}" data-toggle="collapse" data-target="#collapseOption" aria-expanded="false" aria-controls="collapseOption">${skill}</div>`);
     })
 
 
@@ -327,7 +335,7 @@ function close_modal(){
   $('body #update_skill_loader').addClass('hide_button');
   $('body #add_skill_btn').removeClass('hide_button');
   $('body #add_skill_loader').addClass('hide_button');
-  $('body .skill_options').addClass('hide-options');
+  // $('body .skill_options').addClass('hide-options');
   // $('.modal-title').html('');
   // $('.modal-body').html('');
   // $('#global_modal').modal('hide');
