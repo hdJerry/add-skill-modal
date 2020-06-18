@@ -310,16 +310,15 @@ function call_modal({title, content, size}){
 	$('.modal-title').html(title);
 	$('.modal-body').html(content+'<br class="clear"/>');
 
-setTimeout(()=>{
-  $('#global_modal').modal({
-    keyboard : false,
-    backdrop : 'static',
-    show : true,
-    focus: true
-  });
+// setTimeout(()=>{
+//
+// },200)
 
-},200)
-
+$('#global_modal').modal({
+  keyboard : true,
+  backdrop : true,
+  show : true
+});
 
 }
 
@@ -328,6 +327,12 @@ setTimeout(()=>{
 
 });
 
+$('body .modal').on('click',()=>{
+
+  // $('body .skill_options').collapse('hide');
+  close_modal();
+})
+
 
 function close_modal(){
   // $('body .skill_options').html('');
@@ -335,6 +340,7 @@ function close_modal(){
   $('body #update_skill_loader').addClass('hide_button');
   $('body #add_skill_btn').removeClass('hide_button');
   $('body #add_skill_loader').addClass('hide_button');
+  $('body .skill_options').collapse('hide');
   // $('body .skill_options').addClass('hide-options');
   // $('.modal-title').html('');
   // $('.modal-body').html('');
