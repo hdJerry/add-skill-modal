@@ -114,7 +114,7 @@ $('body')
 
 
 //WHen the user click the option provided it is saved in the input field
-.on('click', '.modal .skill_option',(elm)=>{
+.on('click', '.skill_option',(elm)=>{
   let {target} = elm;
   $('body .skill').val(target.innerText)
 
@@ -134,13 +134,16 @@ $('body')
 
     $('body #'+selected+'_btn').attr('disabled',false);
   }
+  setTimeout(()=>{
 
-  $('body .skill_options').addClass('hide-options');
+    $('body .skill_options').addClass('hide-options');
+  },200)
+
 
 })
 
 //If what the user types isn't part of our options the user can't add the skill
-.on('blur', '.modal .skill', (elm)=>{
+.on('blur', '.skill', (elm)=>{
 //
 
 setTimeout(()=>{
@@ -195,7 +198,7 @@ if($('body .skill_options').hasClass('hide-options')){
 })
 
 //give options when user types
-.on('keyup', '.modal .skill', (elm)=>{
+.on('keyup', '.skill', (elm)=>{
 
 
   let {target} = elm;

@@ -10,6 +10,7 @@
 
       .modal{
         background: rgba(53, 58, 69, 0.29);
+        padding-left: 0;
       }
 
       .modal-dialog{
