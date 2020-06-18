@@ -143,7 +143,7 @@ border:1px solid #337AB7 !important;
   box-sizing: border-box;
   border-radius: 5px;
   height: auto;
-  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s ease-in-out; */
   /* max-height: 178px; */
   /* overflow-y: auto; */
 }
