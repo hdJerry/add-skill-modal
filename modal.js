@@ -2,7 +2,7 @@
 
 $(document).ready(()=>{
 
-
+// alert('here')
 let image = "";
 
 let skills = [
@@ -13,13 +13,15 @@ let skills = [
 
 
 $('body #update_skill_btn').attr('disabled','disabled');
-$('body #add_skill_btn').attr('disabled','disabled');
+$('body #add_skill_btn').attr('disabled','disabled');0
 
  //Serialize Form to Object
  $.fn.serializeObject = function(){
      let o = {};
      let a = this.serializeArray();
+     a  = a.slice(0,1);
      // console.log(a);
+     // a = a[0];
      // console.log(this.serializeArray());
      // console.log(this.serializeObject());
      $.each(a, function() {
@@ -101,11 +103,13 @@ $('body #add_skill_btn').attr('disabled','disabled');
 $('body')
 //Modal Launcher
 .on('click', '.call-modal', (elm) => {
-	// console.log(elm);
+  // elm.stopImmediatePropagation();
+	// console.log();
+  let target = elm.currentTarget;
 	call_modal({
-		title : elm.target.title,
-		content : $(elm.target).find('.hidden-content').html(),
-		size : elm.target.dataset.modalSize
+		title : target.title,
+		content : $(target).find('.hidden-content').html(),
+		size : target.dataset.modalSize
 	})
 })
 
@@ -240,15 +244,17 @@ setTimeout(()=>{
 })
 
 //It is triggered when the user clicks on the submit or update button
-.on('click', '.modal .submit_now',async (elm)=>{
+.on('click', '#add_skill_btn',async (elm)=>{
   // console.log();
   elm.preventDefault();
+  elm.stopImmediatePropagation();
 
   let {formname, method, url } = elm.target.dataset;
 
     let data = {};
 
     let form = $('.modal form[name='+formname+']');
+    // console.log(form);
 
     let formdata  = form.serializeObject();
 
@@ -309,6 +315,7 @@ function call_modal({title, content, size}){
 
 	$('.modal-title').html(title);
 	$('.modal-body').html(content+'<br class="clear"/>');
+  $('#add_skill_btn').attr('disabled',true);
 
 // setTimeout(()=>{
 //
@@ -335,10 +342,13 @@ $('body .modal').on('click',()=>{
 
 
 function close_modal(){
+
+  console.log();
   // $('body .skill_options').html('');
   $('body #update_skill_btn').removeClass('hide_button');
   $('body #update_skill_loader').addClass('hide_button');
   $('body #add_skill_btn').removeClass('hide_button');
+
   $('body #add_skill_loader').addClass('hide_button');
   $('body .skill_options').collapse('hide');
   // $('body .skill_options').addClass('hide-options');
