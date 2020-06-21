@@ -47,15 +47,24 @@
     @media (pointer: fine) {
         /* ... */
         .list-trash{
-          display: none;
-            /* transform: scale(0.8);
-          transition: all 1s ease-in-out; */
+          /* display: none; */
+          opacity: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            /* transform: scale(0.8); */
+          transition: all 0.5s ease-in-out;
         }
 
         .lists li:hover .list-trash{
+          width: 32px;
+          height: 32px;
+          background-color: #05448230;
+          border-radius: 3px;
+          opacity: 1;
           /* color: red; */
           /* transform: scale(1.09); */
-          display: inline-block;
+          /* display: inline-block; */
         }
       }
 
