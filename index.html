@@ -20,6 +20,10 @@
 
     <style media="screen">
 
+    .upload-section, #skills, #socials{
+      margin-bottom: 32px!important;
+    }
+
     #edit_text{
     display: inline-block;
     margin-top: 13px;
@@ -40,17 +44,21 @@
     .form-check-label{
       margin-left: 12px;
     }
-      .list-trash{
-        display: none;
-          /* transform: scale(0.8);
-        transition: all 1s ease-in-out; */
+    @media (pointer: fine) {
+        /* ... */
+        .list-trash{
+          display: none;
+            /* transform: scale(0.8);
+          transition: all 1s ease-in-out; */
+        }
+
+        .lists li:hover .list-trash{
+          /* color: red; */
+          /* transform: scale(1.09); */
+          display: inline-block;
+        }
       }
 
-      .lists li:hover .list-trash{
-        /* color: red; */
-        /* transform: scale(1.09); */
-        display: inline-block;
-      }
       .file-box{
         position: relative;
         border: 2px solid #B5B5B5;
@@ -349,7 +357,7 @@ height: 24px;
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <div class="upload-section mb-3">
+                        <div class="upload-section mb-4">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <div class="card p-3 curriculum">
@@ -394,7 +402,7 @@ height: 24px;
                                 </div>
                             </div>
                         </div>
-                        <section id="skills" class="mb-3">
+                        <section id="skills" class="mb-4">
                             <div class="card p-4">
                                 <div class="section-title py-2">
                                     <div class="section-name">
@@ -476,7 +484,7 @@ height: 24px;
                             </div>
                         </section>
 
-                        <section id="socials">
+                        <section id="socials" class="mb-4">
                             <div class="card p-4">
                                 <div class="section-title py-2">
                                     <div class="section-name">
