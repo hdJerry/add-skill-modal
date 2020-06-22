@@ -60,7 +60,7 @@ body {
   font-size: 14px;
 }
 
-img{
+img, svg{
   cursor: pointer;
 }
 
